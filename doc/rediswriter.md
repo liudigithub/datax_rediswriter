@@ -11,6 +11,7 @@ RedisWriter通过Datax框架获取Reader生成的数据，然后将Datax支持�
 #### 3 功能说明
 * 该示例从ODPS读一份数据到MongoDB。
 
+```json
 {
     "job": {
         "content": [
@@ -32,11 +33,11 @@ RedisWriter通过Datax框架获取Reader生成的数据，然后将Datax支持�
                 "writer": {
                     "name": "rediswriter", 
                     "parameter": {
-					    "clusterMode": "redis",
+                        "clusterMode": "redis",
                         "address": "127.0.0.1:7001,127.0.0.1:7002,127.0.0.1:7003,127.0.0.1:7004,127.0.0.1:7005,127.0.0.1:7006", 
                         "password": "", 
                         "keyColumn": ["col1","col2"], 
-						"valueColumn": ["col3","col4"], 
+                        "valueColumn": ["col3","col4"], 
                         "valueMode": "json", 
                         "writeMode": "insert"
                     }
@@ -48,6 +49,7 @@ RedisWriter通过Datax框架获取Reader生成的数据，然后将Datax支持�
        }
     }
 }
+```
 
 #### 4 参数说明
 * clusterMode: redis集群模式，当前只支持redis-cluster,后续会更新codis/redis单节点版本【必填】
